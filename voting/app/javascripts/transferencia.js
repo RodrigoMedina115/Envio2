@@ -1,6 +1,6 @@
-function apretar(){
+
 import { default as Web3} from 'web3';
-import { default as contract } from 'truffle-contract'
+import { default as contract } from 'truffle-contract';
 
 /*
  * When you compile and deploy your Voting contract,
@@ -13,12 +13,11 @@ import { default as contract } from 'truffle-contract'
  */
 
 import envio_artifacts from '../../build/contracts/Envio.json'
-
+function apretar(){
 var Envio = contract(envio_artifacts);	
-web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
 var Envio = contract(Envio_artifacts);
-var account_one = document.getElementById("cuenta_1").value;; // an address
-var account_two = document.getElementById("cuenta_2").value;; // another address
+var account_one = 0x2f9c8D2367aC65e8C55C604E59499464e75bBe85; // an address
+var account_two = 0x7fBc7D96F8f307CdFaaC6C14701Ed5a7E80c750C; // another address
 var meta;
 web3.eth.sendTransaction({from:account_one, to:account_two, value: 10})
 Envio.deployed().then(function(instance) {
